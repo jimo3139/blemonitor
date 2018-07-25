@@ -477,6 +477,15 @@ int main(int argc, char **argv)
 		traceLog(MESSAGE,"MSG024: System type is a raspberry ","pi3",getpid());
 		map = 3;
 	}
+	else if(strstr(hostname, "zero")) {
+		printf("MSG025: System type is a Raspberry pi Zero\n");
+		traceLog(MESSAGE,"MSG025: System type is a raspberry ","pi Zero",getpid());
+		map = 3;
+	}
+	else { 
+		printf("ERR025: Unknown hostname, prompt should be either stealth32 blackbird32 or zero\n");
+		traceLog(MESSAGE,"ERR025: Unknown hostname, prompt should be either stealth32 blackbird32 or zero","",getpid());
+	}
 	
 	initBcm2835();		// Init the BCM2835 options,
 
